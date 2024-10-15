@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"go-tip/internal/controller"
+	c "go-tip/internal/controller"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -12,7 +12,7 @@ func NewRouter() *gin.Engine {
 	v1 := r.Group("/v1")
 	{
 		v1.GET("/ping", Pong)
-		v1.GET("/user", controller.NewUserController(r).GetUser)
+		v1.GET("/user", c.NewUserController(r).GetUser)
 	}
 	return r
 }
