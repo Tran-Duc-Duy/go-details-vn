@@ -183,3 +183,9 @@ nếu tạo file thì nhớ cài extension http rest, file có nội dung như s
 ```http
 GET  http://localhost:8080/v1/ping
 ```
+
+Video 3: Hướng dẫn xây dựng api theo mô hình mvc
+
+Yêu cầu: phải hiểu con trỏ, struct. (Học kỹ sau này)
+controller -> service -> repo -> models -> db
+![mvc](docs/mvc.png)
