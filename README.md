@@ -274,11 +274,13 @@ go install github.com/air-verse/air@latest
 
 Tải air về xong cần config
 
-````bash
+```bash
 air init
 ```
+
 sau đó thì cần chỉnh sửa lại file .air.toml một chút cho phù hợp
-``` bash
+
+```bash
 [build]
 # Thực hiện lệnh build cho thư mục chứa main.go
 cmd = "go build -o ./tmp/main.exe ./cmd/server"
@@ -286,6 +288,6 @@ cmd = "go build -o ./tmp/main.exe ./cmd/server"
 bin = "./tmp/main.exe"
 # Tự động chạy lại sau khi build thành công
 full_bin = "D:/2024-go/tmp/main.exe"
-````
+```
 
 Giờ thì sửa file xong chỉ cần ctrl+s thôi, không khác gì nodemon
