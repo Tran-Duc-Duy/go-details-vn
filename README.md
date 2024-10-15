@@ -229,8 +229,39 @@ func NewRouter() *gin.Engine {
 }
 
 ```
+
 c ở đây thay thế cho controller
 
 Xong bước 1: tạo controller với struct.
 Bước hai đi tạo các lớp liên quan, controller sẽ gọi đến service, service gọi đến repo, repo gọi đến db quá là quen thuộc!
 
+---
+
+Video 4: error handler
+
+- liệt kê lỗi trong file httpStatusCode
+- Viết sẵn các hàm handle lỗi trong file response.go
+
+Demo SuccessResponse
+
+```go
+func (uc *UserController) GetUser(c *gin.Context) {
+	// c.JSON(http.StatusOK, gin.H{
+	// 	"Duy": uc.userService.GetUser(),
+	// })
+
+	response.SuccessResponse(c, http.StatusOK, uc.userService.GetUser())
+}
+```
+
+Demo ErrorResponse
+
+```go
+func (uc *UserController) GetUser(c *gin.Context) {
+	// c.JSON(http.StatusOK, gin.H{
+	// 	"Duy": uc.userService.GetUser(),
+	// })
+
+	response.ErrorResponse(c, http.StatusNotFound, uc.userService.GetUser())
+}
+```
