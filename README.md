@@ -1,3 +1,20 @@
+## Bước 1: tìm hiểu tổng quan
+
+- Đọc tài liệu chính thống của go
+- Lướt một vòng github đọc qua các opensource
+
+## Bước 2: tìm sách tốt
+
+1. Pro Go: The Complete Guide to Programming Reliable and Efficient Software Using Golang - Adam Freeman
+2. Software Development with Go: Cloud-Native Programming using Golang with Linux and Docker - Nanik Tolaram
+3. Go Programming - From Beginner to Professional - Packt Publishing
+4. Hands-On High Performance with Go - Packt Publishing
+5. gRPC Microservices in Go - HÜSEYIN BABAL
+
+## Bước 3: tìm hiểu kiến thức từ những người đi trước có kinh nghiệm, học được từ anh anonystick https://www.youtube.com/@anonystick
+
+Dưới đây là những gì đọng lại sau khi xem video:
+
 Thiết lập dự án go  
 Video 1
 
