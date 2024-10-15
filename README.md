@@ -1,3 +1,20 @@
+## Bước 1: tìm hiểu tổng quan
+
+- Đọc tài liệu chính thống của go
+- Lướt một vòng github đọc qua các opensource
+
+## Bước 2: tìm sách tốt
+
+1. Pro Go: The Complete Guide to Programming Reliable and Efficient Software Using Golang - Adam Freeman
+2. Software Development with Go: Cloud-Native Programming using Golang with Linux and Docker - Nanik Tolaram
+3. Go Programming - From Beginner to Professional - Packt Publishing
+4. Hands-On High Performance with Go - Packt Publishing
+5. gRPC Microservices in Go - HÜSEYIN BABAL
+
+## Bước 3: tìm hiểu kiến thức từ những người đi trước có kinh nghiệm, học được từ anh anonystick https://www.youtube.com/@anonystick
+
+Dưới đây là những gì đọng lại sau khi xem video:
+
 Thiết lập dự án go  
 Video 1
 
@@ -183,3 +200,37 @@ nếu tạo file thì nhớ cài extension http rest, file có nội dung như s
 ```http
 GET  http://localhost:8080/v1/ping
 ```
+
+Video 3: Hướng dẫn xây dựng api theo mô hình mvc
+
+Yêu cầu: phải hiểu con trỏ, struct. (Học kỹ sau này)
+controller -> service -> repo -> models -> db
+![mvc](docs/mvc.png)
+
+Tips: mình có thể alias cho đường dẫn.
+
+```go
+
+import (
+	c "go-tip/internal/controller"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
+func NewRouter() *gin.Engine {
+	r := gin.Default()
+	v1 := r.Group("/v1")
+	{
+		v1.GET("/ping", Pong)
+		v1.GET("/user", c.NewUserController(r).GetUser)
+	}
+	return r
+}
+
+```
+c ở đây thay thế cho controller
+
+Xong bước 1: tạo controller với struct.
+Bước hai đi tạo các lớp liên quan, controller sẽ gọi đến service, service gọi đến repo, repo gọi đến db quá là quen thuộc!
+
