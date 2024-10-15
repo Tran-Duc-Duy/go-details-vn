@@ -265,3 +265,27 @@ func (uc *UserController) GetUser(c *gin.Context) {
 	response.ErrorResponse(c, http.StatusNotFound, uc.userService.GetUser())
 }
 ```
+
+Vì mỗi lần sửa lại file thì đều phải chạy lại server quá là điên tiết, vì bị nhiễm sự tiện lợi của nodejs khi mỗi lần chỉnh sửa nó tự watch và compile lại cho mình, vì thế nên đã tìm hiểu thêm vài thư viện liên quan đến live-reloading và thật may mắn khi tìm thấy air. Vào thẳng https://github.com/air-verse/air để đọc cho chi tiết.
+
+```bash
+go install github.com/air-verse/air@latest
+```
+
+Tải air về xong cần config
+
+````bash
+air init
+```
+sau đó thì cần chỉnh sửa lại file .air.toml một chút cho phù hợp
+``` bash
+[build]
+# Thực hiện lệnh build cho thư mục chứa main.go
+cmd = "go build -o ./tmp/main.exe ./cmd/server"
+# File binary sẽ được lưu ở đâu
+bin = "./tmp/main.exe"
+# Tự động chạy lại sau khi build thành công
+full_bin = "D:/2024-go/tmp/main.exe"
+````
+
+Giờ thì sửa file xong chỉ cần ctrl+s thôi, không khác gì nodemon
